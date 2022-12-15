@@ -7,9 +7,8 @@ var gpx = new gpxParser(); //Create gpxParser Object
 
 gpx.parse(gpxInString); //parse gpx file from string data
 
-let geoJSON = gpx.toGeoJSON();
+fs.writeFile('example-gpx.json', JSON.stringify(gpx), 'utf8', () => {});
 
-console.log(gpx.tracks[0].points, 'MARKERS')
-console.log(geoJSON, 'GEO JSON')
+console.log(gpx, 'MARKERS')
 
 
